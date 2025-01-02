@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>B61-12.ac</path>
+
+  <animation>
+    <object-name>B61-12</object-name>
+    <object-name>B61-12_Wings</object-name>
+    <object-name>B61-12_Hooks</object-name>
+  </animation>
+
+</PropertyList>

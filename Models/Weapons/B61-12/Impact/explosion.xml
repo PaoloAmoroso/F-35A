@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <object-name>Fire</object-name>
+    <path>ExplosionFire.xml</path>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 200 </x-offset>
+        <y-offset> 200 </y-offset>
+        <z-offset> 200 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <model>
+    <object-name>Smoke</object-name>
+    <path>ExplosionSmoke.xml</path>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 250 </x-offset>
+        <y-offset> 250 </y-offset>
+        <z-offset> 250 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+  <model>
+    <object-name>Therrmal</object-name>
+    <path>ExplosionThermal.xml</path>
+    <overlay>
+      <animation n="100">
+        <type>scale</type>
+        <property>constants/zero</property>
+        <x-offset> 250 </x-offset>
+        <y-offset> 250 </y-offset>
+        <z-offset> 250 </z-offset>
+      </animation>
+    </overlay>
+  </model>
+
+</PropertyList>
