@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Lockheed-Martin F-35A Lightning II model config file -->
+<!-- Paolo Amoroso 2024/12/19 -->
+
+<PropertyList>
+	<path>F-35A_wingman.ac</path>
+	<offsets>
+		<x-m>0</x-m>
+	</offsets>
+
+</PropertyList>
