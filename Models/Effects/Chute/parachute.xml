@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>parachute.ac</path>
+  <offsets>
+    <pitch-deg>-5</pitch-deg>   
+    <heading-deg>-10</heading-deg>
+    <roll-deg>0</roll-deg>
+  </offsets>
+
+  <animation>
+    <!-- Objets opaques -->
+
+    <!-- Objets transparents -->
+    <object-name>parachute</object-name>
+    <object-name>cables</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>parachute</object-name>
+    <object-name>cables</object-name>
+  </animation>
+
+  <animation>
+    <name>ParachuteEntier</name>
+    <object-name>parachute</object-name>
+    <object-name>cables</object-name>
+  </animation>
+
+  <!-- Sortie du parachute -->
+  <animation>
+    <type>select</type>
+    <object-name>ParachuteEntier</object-name>
+    <condition>
+      <greater-than>
+       <property>sim/multiplay/generic/float[22]</property>
+        <value>0.5</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ParachuteEntier</object-name>
+    <property>sim/multiplay/generic/float[23]</property>
+    <factor>1</factor>
+    <offset-deg>270</offset-deg>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ParachuteEntier</object-name>
+    <property>sim/multiplay/generic/float[24]</property>
+    <factor>1</factor>
+    <offset-deg>-90</offset-deg>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>-8</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>0</y>
+      <z>1</z>
+    </axis>
+  </animation>
+
+ <animation>
+    <type>scale</type>
+    <object-name>ParachuteEntier</object-name>
+    <property>sim/multiplay/generic/float[25]</property>
+    <x-factor>1.0</x-factor>
+    <x-offset>0</x-offset>
+  </animation>
+
+
+</PropertyList>
