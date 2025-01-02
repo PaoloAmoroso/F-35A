@@ -1,0 +1,1838 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<sim>
+		<description>Lockheed-Martin F-35A Lightning II</description>
+		<author>VooDoo and The FGUK Development Dream Team with Geed (Sound), Petar Jedvaj, Detlef Faber, F-GTUX, Paolo Amoroso</author>
+		<status>Alfa V1.0</status>
+	 	<flight-model>yasim</flight-model>
+		<aero>F-35A-yasim</aero>
+		<fuel-fraction>1.0</fuel-fraction>
+<rendering>
+ <refl_correction type="string">-0.51</refl_correction>
+ <frensel-factor type="string">0.5</frensel-factor>
+</rendering>
+
+   <previews>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splash/F-35A_1.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splash/F-35A_2.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splash/F-35A_3.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splash/F-35A_4.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splash/F-35A_5.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Splash/F-35A_6.png</path>
+      </preview>
+
+    </previews>
+
+    <submodels>
+        <serviceable type="bool">true</serviceable>
+        <path>Aircraft/F-35A/Models/Effects/submodels.xml</path>
+    </submodels>
+		
+    <systems>
+
+                <electrical>
+				<path>Aircraft/F-35A/Nasal/Electrical.nas</path>
+			</electrical>
+
+    </systems> 
+
+           <virtual-cockpit archive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+		<model>
+			<path>Aircraft/F-35A/Models/F-35A.xml</path>
+		</model>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <bool n="0" type="bool" alias="damage/sounds/explode-on"/>
+        <bool n="1" type="bool" alias="damage/fire/serviceable"/>
+        <bool n="2" type="bool">true</bool><!-- this must stay true to prevent bug in MP protocol for bools -->
+        <bool n="40" type="bool">true</bool>
+        <bool n="41" type="bool">true</bool>
+        <bool n="42" type="bool">true</bool>
+        <bool n="43" type="bool">true</bool>
+        <bool n="44" type="bool">true</bool>
+        <bool n="45" type="bool">true</bool>
+        <bool n="35" type="bool" alias="/surface-positions/chute-pos-norm"/>
+        <bool n="36" type="bool" alias="/controls/engines/engine/throttle"/>
+        <bool n="50" type="bool">true</bool>
+        <bool n="51" type="bool" alias="/instrumentation/gci/bogeydope"/>
+        <bool n="52" type="bool" alias="/instrumentation/gci/cutoff"/>
+        <int n="0" alias="/controls/switches/nav-lights-switch"/>  <!-- Nav lights on -->
+        <int n="1" alias="/controls/switches/beacon-switch"/> <!-- Beacon on -->
+        <int n="2" alias="/controls/switches/landing-lights-switch" />  <!-- Landing lights on -->
+        <int n="3" alias="/controls/switches/strobe-switch"/>  <!-- Taxi light on -->
+        <int n="4" alias="/controls/smoke"/> 
+        <int type="int" n="5">  0 </int><!-- 5 immat -->
+        <int type="bool" n="6"> 1 </int><!-- 6 smoke/bomb/torpedo -->
+        <int n="7" alias="/sim/crashed" /><!-- Crashed -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int> <!-- 8 nav-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int> <!-- 9 strobe-lights -->
+        <int n="10" alias="/controls/electric/key-pos">  0 </int> <!-- 10 key position -->
+    <!--<int n="11" type="int" alias="/surface-positions/left-flap-pos-norm"/>-->
+    <!--<int n="12" type="int" alias="/surface-positions/right-flap-pos-norm"/>-->
+        <int n="15" type="int" alias="/sim/model/daVinci_SU-34/smokewinderB1"/>
+        <int n="16" type="int" alias="/sim/model/daVinci_SU-34/smokewinderB9"/>
+        <int n="17" type="int" alias="/sim/model/daVinci_SU-34/smokewinderW1"/>
+        
+        <float n="1" alias="/velocities/airspeed-kt/"/>
+        <float n="2" alias="/velocities/mach"/>
+        <float n="3" alias="/gear/gear[2]/wow/"/>
+        <float n="4" type="double" alias="/surface-positions/aileron-pos-norm"/>
+        <float n="5" type="double" alias="/surface-positions/elevator-pos-norm"/>
+        <float n="6" type="double" alias="/surface-positions/right-taileron-pos-norm"/>
+        <float n="7" type="double" alias="/gear/gear[0]/steering-norm"/>
+        <float n="8" alias="/position/altitude-ft"> 0 </float><!-- altitude for Smoke/Trail -->
+        <float n="9" type="double" alias="/instrumentation/doors/wings/position-norm"/>
+        <float n="10" alias="/baydoors/position-norm"/>
+        <float n="11" alias="/controls/engines/engine/throttle"/>
+        <float n="12" alias="/controls/flight/aileron"/>
+        <float n="13" alias="/controls/engines/engine[0]/mixture"/>
+        <float n="14" type="double">0</float><!-- scene red inverted --> 
+        <float n="15" alias="/gear/gear[0]/compression-norm"/>
+        <float n="16" alias="/gear/gear[1]/compression-norm"/>
+        <float n="17" alias="/gear/gear[2]/compression-norm"/>
+        <float n="18" alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="19" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="20" alias="/gear/gear[2]/rollspeed-ms"/>  
+        <!-- float n="21" alias="/refuel/position-norm"/ -->
+        <float n="22" alias="/surface-positions/chute-pos-norm"/>
+        <float n="23" alias="/orientation/parachute-theta"/>
+        <float n="24" alias="/orientation/parachute-phi"/>
+        <float n="25" alias="/controls/flight/parachute"/>
+        <float n="26" alias="/position/altitude-ft"/>
+        <float n="27" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="28" alias="/engines/engine/afterburner"/>
+       </generic>
+    </multiplay>
+
+<flight-recorder>
+      <replay-config type="int">0</replay-config>
+      <config n="0" include="/Aircraft/Generic/flightrecorder/generic-jet.xml">
+        <name type="string">F-35A Flight Recorder</name>
+
+         <signal>
+          <type>float</type> <!-- Canopy Position -->
+          <property type="string">/sim/model/door-positions/crew/position-norm</property>
+        </signal>
+
+        <signal>
+          <type>float</type> <!-- Slider Position -->
+          <property type="string">/sim/model/door-positions/passenger/position-norm</property>
+        </signal>
+
+         <signal>
+          <type>float</type> <!-- Slider Position -->
+          <property type="string">/sim/multiplay/generic/float[21]</property>
+        </signal> 
+           
+	   <signal>
+          <type>float</type>
+          <property type="string">/environment/relative-humidity</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/environment/temperature-degc</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/velocities/airspeed-kt</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/int[1]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[14]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[15]</property>
+        </signal>
+
+         <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[16]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/model/surface-positions/rudder-pos-norm</property>
+        </signal>
+
+         <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[10]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[11]</property>
+        </signal>
+
+       <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[13]</property>
+        </signal>
+
+        <!-- signal>
+          <type>float</type>
+          <property>canopy/position-norm</property>
+        </signal -->
+
+        <signal>
+          <type>float</type>
+          <property>baydoor/position-norm</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property>/sim/multiplay/generic/bool[36]</property>
+        </signal>
+
+       <signal>
+          <type>float</type>
+          <property>/sim/model/surface-positions/speedbrake-pos-norm</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property>/sim/model/gear/tailhook</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[21]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[22]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[23]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[24]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[25]</property>
+        </signal>
+
+        <signal>
+          <type>float</type>
+          <property type="string">/sim/multiplay/generic/float[28]</property>
+        </signal>
+       
+       </config>
+    </flight-recorder>
+
+           <sound>
+		 <path>Aircraft/F-35A/Sounds/sound.xml</path>
+		</sound>	
+
+           <view n="0">
+			<name>Cockpit</name>
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y" type="double"> 0.00</x-offset-m><!-- Right -->
+				<y-offset-m archive="y" type="double"> 1.05</y-offset-m><!-- Up -->
+				<z-offset-m archive="y" type="double">-4.57</z-offset-m><!-- Back -->
+				<default-field-of-view-deg type="double">110</default-field-of-view-deg>
+				<pitch-offset-deg>-3.5</pitch-offset-deg>
+			</config>
+		</view>
+
+           <help>
+			<title>Lockheed-Martin F-35A Lightining II</title>
+
+			<key>
+				<name>}</name>
+				<desc>AutoStart</desc>
+			</key> 
+
+			
+			<key>
+				<name>c</name>
+				<desc>Canopy</desc>
+			</key> 
+
+			<key>
+				<name>Ctrl+d</name>
+				<desc>Weapons Bay Doors</desc>
+			</key>
+
+                <key>
+				<name>F</name>
+				<desc>Toggle Fuel Doors</desc>
+			</key>
+			
+                 <key>
+				<name>Ctrl+B</name>
+				<desc>Toggle Speedbrakes</desc>
+			</key>
+                        <key>
+				<name>O/o</name>
+				<desc>Deploy/Retract Tail Hook (Not for Deck Landings!)</desc>
+			</key>
+
+                <key>
+				<name>d</name>
+				<desc>Deploy/Jettison Parachute</desc>
+                </key>
+
+                <key>
+				<name>Q</name>
+				<desc>Reset View</desc>
+			</key>
+
+                <key>
+				<name>e</name>
+				<desc>Cannon</desc>
+			</key>
+
+                <key>
+				<name>E | R</name>
+				<desc>External Station 1 | 11 Launch</desc>
+			</key>
+
+                <key>
+				<name>u | i</name>
+				<desc>External Station 2 | 10 Launch</desc>
+			</key>
+
+                <key>
+				<name>U | I</name>
+				<desc>External Station 3 | 9 Launch</desc>
+			</key>
+
+                <key>
+				<name>N | M</name>
+				<desc>Internal Station 4 | 8 Launch</desc>
+			</key>
+
+                <key>
+				<name>n | m</name>
+				<desc>Internal Station 5 | 7 Launch</desc>
+			</key>
+			
+			<line></line>
+<line>To start up and shutdown the aircraft, use the button on the left side of the cockpit, the "AutoStart" command in the menu, or the corresponding key on the keyboard.</line>
+                        <line></line>
+			<line>Apply full power, hold the stick back. Take off will occur at 140-160kts on a clean aircraft.</line>
+                        <line></line>
+			<line>Maximum speed - Mach 1.6 at 43000ft. </line> 
+                        <line></line>
+			<line>This aircraft is equipped with automatic flaps and slats.</line>
+                        <line></line>
+   			<line>You can pull up a Special HUD by clicking in the center of the HUD glass.</line>
+                        <line></line>
+<line>To operate the external lights, use the panel on the left side of the cockpit.</line>
+                        <line></line>
+<line>Press the map on the main screen to switch the "Radar Mode". Press again to switch to "Map Mode".</line>
+                        <line></line>
+<line>STATION 1  External: AIM-9M, Smokewinder</line>
+<line>STATION 2  External: GBU-12, AIM-120, AGM-154, AGM-158</line>
+<line>STATION 3  External: Auxiliary Tanks, GBU-12, AIM-120, AGM-154, AGM-158</line>
+<line>STATION 4  Internal: AIM-120</line>
+<line>STATION 5  Internal: AIM-120, GBU-12, B-61-12</line>
+<line>STATION 6  External: Centerline, Not Used</line> 
+<line>STATION 7  Internal: AIM-120, GBU-12, B-61-12</line>
+<line>STATION 8  Internal: AIM-120</line> 
+<line>STATION 9  External: Auxiliary Tanks, GBU-12, AIM-120, AGM-154, AGM-158</line>
+<line>STATION 10 External: GBU-12, AIM-120, AGM-154, AGM-158</line>
+<line>STATION 11 External: AIM-9M, Smokewinder</line>
+                        <line></line>
+
+		</help>
+
+    <menubar>
+	  <default>
+	   <menu n="100">
+	    <label>F-35A</label>
+            <enabled type="bool">true</enabled>
+            <item>
+        <label>Autostart</label>
+	   <binding>
+		<command>nasal</command>
+		<script>engines.engine1.autostart();</script>
+	   </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/cockpit</property>
+          <value>1.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/panel-norm</property>
+          <value>0.3</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/nav-lights</property>
+          <value>1.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/strobe</property>
+          <value>1.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/beacon</property>
+          <value>1.0</value>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>gui.popupTip("Engines started!")</script>
+        </binding>
+      </item>
+
+      <item>
+        <label>Autostop</label>
+	   <binding>
+		<command>nasal</command>
+		<script>engines.engine1.autostart();</script>
+	   </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/cockpit</property>
+          <value>0.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/panel-norm</property>
+          <value>0.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/nav-lights</property>
+          <value>0.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/strobe</property>
+          <value>0.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/beacon</property>
+          <value>0.0</value>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>gui.popupTip("Engines Shutdown!")</script>
+        </binding>
+      </item>
+
+	 <item>
+	   <label>Select Livery</label>
+         <binding>
+          <command>nasal</command>
+           <script>aircraft.livery.dialog.toggle()</script>
+         </binding>
+	 </item>
+
+	   </menu>
+
+	   <menu n="101">
+	    <label>Weapons</label>
+
+      <item>
+        <label>CONFIGURATION</label>
+        <enabled>false</enabled>
+      </item>
+
+      <item>
+        <label>Show/hide Side Wing Pylons</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-Side_Pylons</property>
+        </binding>
+      </item>
+
+      <item>
+        <label>Show/hide Wing Pylons</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-Mid_Pylons</property>
+        </binding>
+      </item>
+
+      <item>
+        <label>Auxiliary Tanks</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-Tanks</property>
+        </binding>
+      </item>
+
+      <item>
+        <label>PAYLOAD</label>
+        <enabled>false</enabled>
+      </item>
+
+      <item>
+        <label>Internal AIM-120</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-AIM-120-INT</property>
+        </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU-12-INT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-B-61</property>
+        <value>0</value>
+      </binding>
+      </item>
+
+
+      <item>
+        <label>Internal GBU-12</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-GBU-12-INT</property>
+        </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM-120-INT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-B-61</property>
+        <value>0</value>
+      </binding>
+      </item>
+
+      <item>
+        <label>Internal B-61-12 (Inert Mock-Up)</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-B-61</property>
+        </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM-120-INT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU-12-INT</property>
+        <value>0</value>
+      </binding>
+      </item>
+
+      <item>
+        <label>External AIM-120</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-AIM-120-EXT</property>
+        </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU-12-EXT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AGM-154A-EXT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AGM-158-EXT</property>
+        <value>0</value>
+      </binding>
+      </item>
+
+      <item>
+        <label>External GBU-12</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-GBU-12-EXT</property>
+        </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM-120-EXT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AGM-154A-EXT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AGM-158-EXT</property>
+        <value>0</value>
+      </binding>
+      </item>
+
+      <item>
+        <label>External AGM-154</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-AGM-154A-EXT</property>
+        </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU-12-EXT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM-120-EXT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AGM-158-EXT</property>
+        <value>0</value>
+      </binding>
+      </item>
+
+      <item>
+        <label>External AGM-158</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/model/show-AGM-158-EXT</property>
+        </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-GBU-12-EXT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AIM-120-EXT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>/sim/model/show-AGM-154A-EXT</property>
+        <value>0</value>
+      </binding>
+      </item>
+
+      <item>
+        <label>RELOAD WEAPONS</label>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal1</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal2</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal3</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal4</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal5</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal6</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal7</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal8</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal9</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal10</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal11</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal12</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal13</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal14</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal15</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal16</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal17</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal18</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal19</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal20</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal21</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal22</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal23</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal24</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signalT</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (!getprop("gear/gear[0]/wow")) {
+            screen.log.write("This is only possible on ground.");
+            return;
+          }
+          if (getprop("gear/gear[0]/position-norm")) {
+            screen.log.write("Weapons Reloaded.");
+          }
+        </script>
+      </binding>
+      </item>
+
+	   </menu>
+
+	  </default>
+	</menubar>
+ 
+      </sim>
+      
+       <systems>
+			<refuel>
+				<type>boom</type>
+				<serviceable type="bool">true</serviceable>
+                      <max-fuel-transfer-lbs-min>6200</max-fuel-transfer-lbs-min>
+                      <offset-x-m>0</offset-x-m>
+                      <offset-y-m>0</offset-y-m>
+                      <offset-z-m>1</offset-z-m>
+			</refuel>  
+       </systems>
+      
+    <instrumentation>
+
+  <adf>
+    <name>adf</name>
+    <serviceable type="bool" archive="y">true</serviceable>
+    <adf-btn type="bool">true</adf-btn>
+    <bfo-btn type="bool">false</bfo-btn>
+    <volume-norm type="double">0.5</volume-norm>
+    <power-btn type="bool">true</power-btn>
+    <frequencies>
+      <standby-khz type="int">291</standby-khz>
+      <selected-khz type="int">379</selected-khz>
+      <digit n="0">0</digit>
+      <digit n="1">0</digit>
+      <digit n="2">0</digit>
+      <digit n="3">0</digit>
+    </frequencies>
+  </adf>
+
+  <pfd>
+    <mode type="bool">false</mode>
+    <minimums-baro type="int">200</minimums-baro>
+    <minimums-radio type="int">200</minimums-radio>
+  </pfd>
+
+  <rmu>
+    <unit n="0">
+      <serviceable type="bool">true</serviceable>
+      <selected type="int">0</selected>
+      <selected-xoffset type="int">0</selected-xoffset>
+      <selected-yoffset type="int">0</selected-yoffset>
+      <com-num type="int">0</com-num>
+      <nav-num type="int">0</nav-num>
+      <adf-num type="int">0</adf-num>
+    </unit>
+    <unit n="1">
+      <serviceable type="bool">true</serviceable>
+      <selected type="int">0</selected>
+      <selected-xoffset type="int">0</selected-xoffset>
+      <selected-yoffset type="int">0</selected-yoffset>
+      <com-num type="int">1</com-num>
+      <nav-num type="int">1</nav-num>
+      <adf-num type="int">1</adf-num>
+    </unit>
+  </rmu>
+
+    <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>0</number>
+        <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <has-overspeed-indicator>1</has-overspeed-indicator>
+    </airspeed-indicator>
+	
+	 <inst-vertical-speed-indicator>
+        <name>inst-vertical-speed-indicator</name>
+        <number>0</number>
+        <static-pressure>systems/static/pressure-inhg</static-pressure>
+        <serviceable type="bool">true</serviceable>
+    </inst-vertical-speed-indicator>
+
+    <altimeter>
+        <name>altimeter</name>
+        <number>0</number>
+        <static-pressure>/systems/static/pressure-inhg</static-pressure>
+    </altimeter>
+
+    <attitude-indicator>
+        <name>attitude-indicator</name>
+        <number>0</number>
+        <suction>/systems/vacuum/suction-inhg</suction>
+    </attitude-indicator>
+
+    <clock>
+        <name>clock</name>
+        <number>0</number>
+    </clock>
+
+    <comm-radio>
+        <name>comm</name>
+        <number>0</number>
+    </comm-radio>
+
+    <comm-radio>
+        <name>comm</name>
+        <number>1</number>
+    </comm-radio>
+
+    <heading-indicator>
+        <name>heading-indicator</name>
+        <number>0</number>
+        <suction>/systems/vacuum/suction-inhg</suction>
+    </heading-indicator>
+
+    <magnetic-compass>
+        <name>magnetic-compass</name>
+        <number>0</number>
+    </magnetic-compass>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>0</number>
+    </nav-radio>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>1</number>
+    </nav-radio>
+
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
+
+    <slip-skid-ball>
+        <name>slip-skid-ball</name>
+        <number>0</number>
+    </slip-skid-ball>
+
+    <turn-indicator>
+        <name>turn-indicator</name>
+        <number>0</number>
+    </turn-indicator>
+
+    <KT-70>
+        <name>kt-70</name>
+        <number>0</number>
+    </KT-70>
+
+    <KT-70>
+        <name>kt-70</name>
+        <number>1</number>
+    </KT-70>
+
+    <KR-87>
+        <name>kr-87</name>
+        <number>0</number>
+    </KR-87>
+
+    <marker-beacon>
+        <name>marker-beacon</name>
+        <number>0</number>
+    </marker-beacon>
+
+  <mk-viii>                           <!-- http://wiki.flightgear.org/index.php/GPWS -->
+    <serviceable>true</serviceable>
+    <configuration-module>
+      <category-1> 255 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
+      <category-4>  13 </category-4>  <!-- ALTITUDE CALLOUTS -->
+      <category-8>   3 </category-8>  <!-- RADIO ALTITUDE YASIM-->
+      <category-14>  2 </category-14> <!-- AUDIO OUTPUT LEVEL -->
+    </configuration-module>
+    <inputs>
+      <arinc429>
+        <decision-height-ncd type="bool">0</decision-height-ncd>
+        <decision-height type="double">250</decision-height>
+      </arinc429>
+    </inputs>
+    <speaker>
+      <max-dist> 2 </max-dist>        <!-- Max. distance where speaker is heard -->
+      <reference-dist> 1 </reference-dist> <!-- Distance to pilot -->
+      <volume>0.8</volume>
+    </speaker>
+    <voice>
+      <file-prefix type="string">Sounds/mk-viii/</file-prefix>
+    </voice>
+  </mk-viii>
+
+  <nd>
+    <serviceable type="bool">true</serviceable>
+    <radar-texture-path type="string">Aircraft/F-35A/Models/Interior/mfd-pfd/tcas-display.png</radar-texture-path>
+    <symbol-texture-path type="string">Aircraft/F-35A/Models/Interior/mfd-pfd/symbols.png</symbol-texture-path>
+    <font>
+      <color>
+        <red type="float">0.7</red>
+        <green type="float">0.7</green>
+        <blue type="float">0.7</blue>
+        <alpha type="float">1</alpha>
+      </color>
+      <name type="string">helvetica_bold.txf</name>
+      <size type="float">14</size>
+      <line-spacing type="float">0.01</line-spacing>
+    </font>
+    <range type="int" archive="y">100</range>
+    <aircraft-heading-up type="bool">true</aircraft-heading-up>
+    <heading-up-deg type="float">0.01</heading-up-deg>
+    <x-center type="float">0.5</x-center>
+    <y-center type="float">0.5</y-center>
+    <display>
+      <arpt type="bool">1</arpt>
+      <vor type="bool">1</vor>
+      <fix type="bool">0</fix>
+      <tcas type="bool">0</tcas>
+    </display>
+    <line-width type="double">3</line-width>
+  </nd>
+
+  <tcas-display>
+    <serviceable type="bool">true</serviceable>
+    <radar-texture-path type="string">Aircraft/F-35A/Models/Interior/mfd-pfd/tcas-display.png</radar-texture-path>
+    <symbol-texture-path type="string">Aircraft/F-35A/Models/Interior/mfd-pfd/symbols.png</symbol-texture-path>
+    <font>
+      <color>
+        <red type="float">0.7</red>
+        <green type="float">0.7</green>
+        <blue type="float">0.7</blue>
+        <alpha type="float">1</alpha>
+      </color>
+      <name type="string">helvetica_bold.txf</name>
+      <size type="float">14</size>
+      <line-spacing type="float">0.01</line-spacing>
+    </font>
+    <range type="int" archive="y">6</range>
+    <aircraft-heading-up type="bool">true</aircraft-heading-up>
+    <heading-up-deg type="float">0.01</heading-up-deg>
+    <x-center type="float">0.5</x-center>
+    <y-center type="float">0.5</y-center>
+    <display>
+    </display>
+    <line-width type="double">3</line-width>
+  </tcas-display>
+
+  <primus2000>
+    <dc840>
+      <hsi type="bool">0</hsi>
+      <wx type="bool">0</wx>
+      <et type="bool">0</et>
+      <tcas type="bool">0</tcas>
+      <acft-sys type="bool">0</acft-sys>
+      <mfd-map type="bool">1</mfd-map>
+      <mfd-wx type="bool">1</mfd-wx>
+      <norm type="bool">0</norm>
+      <abn type="bool">0</abn>
+      <emer type="bool">0</emer>
+      <skp type="bool">0</skp>
+      <pag type="bool">0</pag>
+      <rcl type="bool">0</rcl>
+      <ent type="bool">0</ent>
+    </dc840>
+    <sc840>
+      <nav1ptr type="double">0</nav1ptr>
+      <nav2ptr type="double">0</nav2ptr>
+    </sc840>
+    <eicas>
+      <serviceable type="bool">1</serviceable>
+    </eicas>
+    <mfd>
+      <menu-num type="int">0</menu-num>
+    </mfd>
+    <pfd>
+    </pfd>
+  </primus2000>
+
+    <radar>
+      <serviceable type="bool" archive="y">true</serviceable>
+      <switch type="string" archive="y">off</switch>
+      <mode-control type="int" archive="y">3</mode-control>
+      <range type="int" archive="y">20</range>
+      <minimized type="bool" archive="y">false</minimized>
+      <heading-marker type="bool" archive="y">false</heading-marker>
+      <lightning type="bool" archive="y">false</lightning>
+      <display-mode type="string">ARC</display-mode>
+        <display-controls>
+          <WX type="bool" archive="y">false</WX>
+          <data type="bool" archive="y">false</data>
+          <pos type="bool" archive="y">true</pos>
+        </display-controls>
+    </radar>
+
+    <tcas>
+        <name>tcas</name>
+        <number>0</number>
+    </tcas>
+
+    <master-reference-gyro>
+        <name>master-reference-gyro</name>
+        <number>0</number>
+    </master-reference-gyro>
+	
+    <gsdi>
+	   <name>gsdi</name>
+	   <number>0</number>
+    </gsdi>
+
+    </instrumentation>
+
+	<environment>
+		<turbulence>
+			<use-cloud-turbulence>true</use-cloud-turbulence>
+		</turbulence>
+	</environment>
+ 
+	<engines>
+		<engine>
+			<rpm type="double">700</rpm>
+		</engine>
+	</engines>
+
+<controls>
+
+        <electric>
+            <battery-switch type = "bool">1</battery-switch>
+            <avionics-switch type = "bool">1</avionics-switch>
+            <external-power type = "bool">1</external-power>
+             <engine n="0">
+              <generator>true</generator>
+             </engine>
+             <engine n="0">
+              <generator>true</generator>
+             </engine>
+        </electric>
+
+        <lighting>
+            <instrument-lights type = "double">0.0</instrument-lights>
+            <panel type = "double">0.0</panel>
+            <nav-lights type = "double">0.0</nav-lights>
+            <strobe type = "double">0.0</strobe>
+            <beacon type = "double">0.0</beacon>
+        </lighting>
+    
+     <gear>
+	     <brake-parking type="double">1.0</brake-parking>
+     </gear>
+
+     <smoke alias="/sim/multiplay/generic/int[4]"/>
+		
+</controls>
+
+ <engines>
+   <engine n="0">
+    <running>false</running>
+   </engine>
+ </engines>
+
+	<yasim>
+		<weights>
+			<pilot-lb>210</pilot-lb>
+		</weights>
+	</yasim>
+	
+	<limits>
+		<max-positive-g>9</max-positive-g>
+		<max-negative-g>-4</max-negative-g>
+	</limits>
+	
+	<!-- Map Keys -->
+	
+	<input>
+		<keyboard>
+			
+			<key n="4">
+				<name>Ctrl-d</name>
+				<desc>Open/close baydoors</desc>
+				<binding>
+					<command>nasal</command>
+					<script>f35.baydoor.toggle();</script>
+				</binding>
+			</key>
+			
+			<key n="99">
+				<name>c</name>
+				<desc>Open/close Canopy</desc>
+				<binding>
+					<command>nasal</command>
+					<script>f35.canopy.toggle();</script>
+				</binding>
+			</key>
+
+			<key n="70">
+				<name>F</name>
+				<desc>Open/close Fuel door</desc>
+				<binding>
+					<command>nasal</command>
+					<script>f35.fuel.toggle();</script>
+				</binding>
+			</key>
+                        			
+    <key n="83">
+        <name>S</name>
+        <desc>Toggle smoke</desc>
+        <binding>
+          <command>property-toggle</command>
+          <property>sim/multiplay/generic/int[4]</property>
+        </binding>
+    </key>   
+			
+<key n="100">
+      <name>d</name>
+      <desc>Deploy braking parachute</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/flight/drag-chute</property>
+      </binding>
+    </key>
+
+  <!-- map keys for arrester hook YASIM -->
+
+ <key n="79">
+   <name>O</name>
+   <desc>Hook down.</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>controls/gear/tailhook</property>
+     <value type="double">1.0</value>
+   </binding>
+ </key>
+
+ <key n="111">
+   <name>o</name>
+   <desc>Hook Up.</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>controls/gear/tailhook</property>
+     <value type="double">0.0</value>
+   </binding>
+ </key>
+
+ <key n="125">
+     <name>}</name>
+     <desc>Engine Autostart</desc>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/cockpit</property>
+          <value>1.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/panel-norm</property>
+          <value>0.3</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/nav-lights</property>
+          <value>1.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/strobe</property>
+          <value>1.0</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/beacon</property>
+          <value>1.0</value>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>gui.popupTip("Engines started!")</script>
+        </binding>
+    </key>
+
+    <key n="81">
+      <name>Q</name>
+      <desc>Reset view</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("sim/current-view/field-of-view",      getprop("sim/current-view/config/default-field-of-view-deg"));
+          setprop("sim/current-view/heading-offset-deg", getprop("sim/current-view/config/heading-offset-deg"));
+          setprop("sim/current-view/pitch-offset-deg",   getprop("sim/current-view/config/pitch-offset-deg"));
+          setprop("sim/current-view/roll-offset-deg",    getprop("sim/current-view/config/roll-offset-deg"));
+        </script>
+      </binding>
+    </key>
+
+<!-- Map Keys for Weapons -->
+
+			<key n="101">
+				<name>e</name>
+				<desc>Gun</desc> 
+				<binding>
+					<command>property-assign</command>
+					<property>controls/armament/trigger</property>
+					<value>true</value>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>property-assign</command>
+						<property>controls/armament/trigger</property>
+						<value>false</value>
+					</binding> 
+				</mod-up>
+			</key>
+
+    <key n="69">
+      <name>E</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal1</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-Side_Pylons</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+    </key>
+
+    <key n="82">
+      <name>R</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal2</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-Side_Pylons</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+    </key>
+
+    <key n="85">
+      <name>U</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signalT</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-Tanks</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal9</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-GBU-12-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal13</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AIM-120-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal17</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AGM-154A-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal21</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AGM-158-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+    </key>
+
+    <key n="73">
+      <name>I</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signalT</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-Tanks</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal10</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-GBU-12-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal14</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AIM-120-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal18</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AGM-154A-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal22</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AGM-158-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+    </key>
+
+    <key n="117">
+      <name>u</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal7</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-GBU-12-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal11</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AIM-120-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal15</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AGM-154A-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal19</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AGM-158-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+    </key>
+
+    <key n="105">
+      <name>i</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal8</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-GBU-12-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal12</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AIM-120-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal16</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AGM-154A-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal20</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AGM-158-EXT</property>
+                <value>true</value>
+            </and>
+        </condition>
+      </binding>
+
+    </key>
+
+    <key n="78">
+      <name>N</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal5</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-GBU-12-INT</property>
+                <value>true</value>
+                <equals>
+                  <property>/sim/model/door-positions/baydoor/position-norm</property>
+               <value>1</value>
+               </equals>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal23</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AIM-120-INT</property>
+                <value>true</value>
+                <equals>
+                  <property>/sim/model/door-positions/baydoor/position-norm</property>
+               <value>1</value>
+               </equals>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signalN1</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-B-61</property>
+                <value>true</value>
+                <equals>
+                  <property>/sim/model/door-positions/baydoor/position-norm</property>
+               <value>1</value>
+               </equals>
+            </and>
+        </condition>
+      </binding>
+	 <binding>
+		<command>nasal</command>
+		<script>f35.baydoor.toggle();</script>
+	 </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("sim/model/door-positions/baydoor/position-norm")) {
+            screen.log.write("Baydoor Auto-Closed.");
+          }
+        </script>
+      </binding>
+    </key>
+
+    <key n="77">
+      <name>M</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal6</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-GBU-12-INT</property>
+                <value>true</value>
+                <equals>
+                  <property>/sim/model/door-positions/baydoor/position-norm</property>
+               <value>1</value>
+               </equals>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal24</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-AIM-120-INT</property>
+                <value>true</value>
+                <equals>
+                  <property>/sim/model/door-positions/baydoor/position-norm</property>
+               <value>1</value>
+               </equals>
+            </and>
+        </condition>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signalN2</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <property>sim/model/show-B-61</property>
+                <value>true</value>
+                <equals>
+                  <property>/sim/model/door-positions/baydoor/position-norm</property>
+               <value>1</value>
+               </equals>
+            </and>
+        </condition>
+      </binding>
+	 <binding>
+		<command>nasal</command>
+		<script>f35.baydoor.toggle();</script>
+	 </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("sim/model/door-positions/baydoor/position-norm")) {
+            screen.log.write("Baydoor Auto-Closed.");
+          }
+        </script>
+      </binding>
+    </key>
+
+    <key n="110">
+      <name>n</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal3</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <!-- property>sim/model/show-AIM-120-INT</property -->
+                <value>true</value>
+                <equals>
+                  <property>/sim/model/door-positions/baydoor/position-norm</property>
+               <value>1</value>
+               </equals>
+            </and>
+        </condition>
+      </binding>
+	 <binding>
+		<command>nasal</command>
+		<script>f35.baydoor.toggle();</script>
+	 </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("sim/model/door-positions/baydoor/position-norm")) {
+            screen.log.write("Baydoor Auto-Closed.");
+          }
+        </script>
+      </binding>
+    </key>
+
+    <key n="109">
+      <name>m</name>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/signal4</property>
+        <value>true</value>
+        <condition>
+            <and>
+                <!-- property>sim/model/show-AIM-120-INT</property -->
+                <value>true</value>
+                <equals>
+                  <property>/sim/model/door-positions/baydoor/position-norm</property>
+               <value>1</value>
+               </equals>
+            </and>
+        </condition>
+      </binding>
+	 <binding>
+		<command>nasal</command>
+		<script>f35.baydoor.toggle();</script>
+	 </binding>
+      <binding>
+        <command>nasal</command>
+        <script>
+          if (getprop("sim/model/door-positions/baydoor/position-norm")) {
+            screen.log.write("Baydoor Auto-Closed.");
+          }
+        </script>
+      </binding>
+    </key>
+
+    <key n="113">
+      <name>q</name>
+      <desc>Trigger flare release</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/armament/flares-release</property>
+        <value type="bool">true</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/armament/flares-release</property>
+          <value type="bool">false</value>
+        </binding>
+      </mod-up>
+    </key>
+
+		</keyboard>
+	</input>
+
+ <!-- NASAL -->
+
+	<nasal>
+		<f35>
+			<file>Aircraft/F-35A/Nasal/fan-yasim.nas</file>
+			<file>Aircraft/F-35A/Nasal/f35.nas</file>
+			<file>Aircraft/F-35A/Nasal/limits.nas</file>
+			<file>Aircraft/F-35A/Nasal/map.nas</file>
+		     <file>Aircraft/F-35A/Nasal/liveries.nas</file>  
+                <file>Aircraft/F-35A/Nasal/light.nas</file>  
+                <file>Aircraft/F-35A/Nasal/Lights.nas</file>  
+                <file>Aircraft/F-35A/Nasal/Electrical.nas</file>
+		</f35>
+
+		<aar> 
+			<file>Aircraft/Generic/aar.nas</file>
+		</aar>
+		
+		<rwr>
+			<file>Aircraft/F-35A/Models/Instruments/bigscreen/radar/rwr.nas</file>
+		</rwr>
+		
+		<radardist>
+			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+		</radardist>
+		
+		<enav>
+			<file>Aircraft/F-35A/Nasal/enav.nas</file>
+		</enav>
+		
+		<radar>
+			<file>Aircraft/F-35A/Nasal/radar.nas</file> 
+		</radar>
+		 
+		<terrain-map>
+			<file>Aircraft/F-35A/Nasal/terrain-map.nas</file>
+		</terrain-map>
+		
+		<low>
+			<file>Aircraft/F-35A/Nasal/low.nas</file>
+		</low>
+
+                <chute>
+                        <file>Aircraft/F-35A/Nasal/Parachute.nas</file>
+                </chute>
+                                                
+                <NAV>
+                        <file>Aircraft/F-35A/Nasal/mfd-navigation.nas</file>
+			<file>Aircraft/F-35A/Nasal/nd-fullscreen.nas</file>
+                        <file>Aircraft/F-35A/Nasal/navaids.nas</file>
+                        <file>Aircraft/F-35A/Nasal/GUI.nas</file>
+                        <file>Aircraft/F-35A/Nasal/MFD.nas</file>
+                        <file>Aircraft/F-35A/Nasal/MFDPage.nas</file>
+                        <file>Aircraft/F-35A/Nasal/MFDPageController.nas</file>
+                        <file>Aircraft/F-35A/Nasal/NavMap.nas</file>
+                        <file>Aircraft/F-35A/Nasal/PFD.nas</file>
+                        <file>Aircraft/F-35A/Nasal/terrain_follow.nas</file>
+                </NAV>
+              
+    <engines>
+      <file>Aircraft/F-35A/Nasal/generic-yasim-engine.nas</file>
+      <script>
+        var engine1 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
+        setlistener("sim/signals/fdm-initialized", func
+        {
+          engine1.init();
+        }, 0, 0);
+       </script>
+    </engines>
+	     
+    <c421>
+      <file>Aircraft/F-35A/Nasal/convert.nas</file>
+      <file>Aircraft/F-35A/Nasal/Electrical.nas</file>
+      <file>Aircraft/F-35A/Nasal/system.nas</file>
+      <file>Aircraft/F-35A/Nasal/flightdirector.nas</file>
+    </c421>
+
+      <dialogs>
+            <file>Aircraft/F-35A/Nasal/dialogs.nas</file>
+      </dialogs>
+
+   	</nasal>
+
+	</PropertyList>
+
+
+
