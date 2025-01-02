@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">USAF, Nellis AFB, WA 5051</name>
+        <F35A>Liveries/USAF/WA5051.png</F35A>
+      </livery>
+     </model>
+  </sim>
+
+</PropertyList>

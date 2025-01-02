@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">USAF, Luke AFB, LF 5030</name>
+        <F35A>Liveries/USAF/LF5030.png</F35A>
+      </livery>
+     </model>
+  </sim>
+
+</PropertyList>

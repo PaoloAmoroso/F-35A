@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">USAF, Hill AFB, HL 5072</name>
+        <F35A>Liveries/USAF/HL5072.png</F35A>
+      </livery>
+     </model>
+  </sim>
+
+</PropertyList>

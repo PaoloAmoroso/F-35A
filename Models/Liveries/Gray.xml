@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">Gray</name>
+        <F35A>Liveries/Grey/Gray.png</F35A>
+      </livery>
+     </model>
+  </sim>
+
+</PropertyList>

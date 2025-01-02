@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim>
+    <model>
+      <livery>
+        <name type="string">USAF, Eglin AFB, EG 0747 (Default)</name>
+        <F35A>Liveries/Default/35A-1.png</F35A>
+      </livery>
+     </model>
+  </sim>
+
+</PropertyList>
