@@ -1326,7 +1326,7 @@ if(navStillOn) {
   </axis>
  </animation>
 
- <!-- CANOPY, BAYDOORS AND REFUELLING DOORS --> 
+ <!-- CANOPY, LADDER, BAYDOORS AND REFUELLING DOORS --> 
     
    <!-- Canopy -->
 
@@ -1378,6 +1378,183 @@ if(navStillOn) {
       </binding>
     </action>
   </animation>
+	
+<!-- Ladder -->
+
+  <animation>
+    <type>pick</type>
+    <object-name>LadderAccessDoor</object-name>
+    <object-name>LadderAccessDoor2</object-name>
+    <object-name>LadderBit</object-name>
+    <object-name>LadderBit2</object-name>
+    <object-name>LadderBit3</object-name>
+    <object-name>LadderBit4</object-name>
+    <object-name>LadderBit5</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>50</value>
+            </less-than>
+          </and>
+        </condition>
+        <command>nasal</command>
+        <script>f35.ladder.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LadderAccessDoor</object-name>
+    <object-name>LadderAccessDoor2</object-name>
+    <property>sim/model/door-positions/ladder/position-norm</property>
+    <factor> 145 </factor>
+    <axis>
+      <x1-m> -4.8815 </x1-m>
+      <y1-m> -0.6356 </y1-m>
+      <z1-m>  0.1256 </z1-m>
+      <x2-m> -4.9018 </x2-m>
+      <y2-m> -0.5630 </y2-m>
+      <z2-m> -0.1504 </z2-m>
+    </axis>
+  </animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>LadderBit</object-name>
+           <object-name>LadderBit2</object-name>
+           <object-name>LadderBit5</object-name>
+		<property>sim/model/door-positions/ladder/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>  0.0</dep></entry>
+			<entry><ind>0.5</ind><dep>  0.0</dep></entry>
+			<entry><ind>0.8</ind><dep>-40.0</dep></entry>
+		</interpolation>
+		<center>
+			<x-m> -4.5481 </x-m>
+			<y-m> -0.7384 </y-m>
+			<z-m>  0.2178 </z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+           <object-name>LadderBit3</object-name>
+		<property>sim/model/door-positions/ladder/position-norm</property>
+		<interpolation>
+			<entry><ind>0.0</ind><dep>  0.0</dep></entry>
+			<entry><ind>0.8</ind><dep>  0.0</dep></entry>
+			<entry><ind>1.0</ind><dep>-26.0</dep></entry>
+		</interpolation>
+		<center>
+			<x-m> -4.5481 </x-m>
+			<y-m> -0.7384 </y-m>
+			<z-m>  0.2178 </z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>LadderBit3</object-name>
+    <property>/sim/model/door-positions/ladder/position-norm</property>
+    <interpolation>
+      <entry><ind>0.00</ind><dep> 0.0</dep></entry>
+      <entry><ind>0.80</ind><dep> 0.0</dep></entry>
+      <entry><ind>1.00</ind><dep>-0.5</dep></entry>
+    </interpolation>
+    <center>
+	 <x-m> -4.5467 </x-m>
+	 <y-m> -0.5526 </y-m>
+	 <z-m> -0.4602 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+	<animation>
+		<type>rotate</type>
+           <object-name>LadderBit4</object-name>
+		<property>sim/model/door-positions/ladder/position-norm</property>
+		<interpolation>
+			<entry><ind>0.00</ind><dep>  0.0</dep></entry>
+			<entry><ind>0.90</ind><dep>  0.0</dep></entry>
+			<entry><ind>1.00</ind><dep>-20.0</dep></entry>
+		</interpolation>
+		<center>
+			<x-m> -4.5481 </x-m>
+			<y-m> -0.7384 </y-m>
+			<z-m>  0.2178 </z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>LadderBit4</object-name>
+    <property>/sim/model/door-positions/ladder/position-norm</property>
+    <interpolation>
+      <entry><ind>0.00</ind><dep> 0.00</dep></entry>
+      <entry><ind>0.90</ind><dep> 0.00</dep></entry>
+      <entry><ind>1.00</ind><dep>-0.93</dep></entry>
+    </interpolation>
+    <center>
+	 <x-m> -4.5513 </x-m>
+	 <y-m> -0.9003 </y-m>
+	 <z-m> -0.7078 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>LadderBit</object-name>
+    <property>/sim/model/door-positions/ladder/position-norm</property>
+    <interpolation>
+      <entry><ind>0.00</ind><dep>  0.0</dep></entry>
+      <entry><ind>0.95</ind><dep>  0.0</dep></entry>
+      <entry><ind>1.00</ind><dep>-63.0</dep></entry>
+    </interpolation>
+    <center>
+	 <x-m> -4.5508 </x-m>
+	 <y-m> -0.6437 </y-m>
+	 <z-m>  0.1556 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
 
   <!-- Weapon Bay Doors -->
 
@@ -1390,10 +1567,6 @@ if(navStillOn) {
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.5</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
@@ -1424,10 +1597,6 @@ if(navStillOn) {
 				<dep>0</dep>
 			</entry>
 			<entry>
-				<ind>0.5</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
 				<ind>1.0</ind>
 				<dep>-90</dep>
 			</entry>
@@ -1451,10 +1620,6 @@ if(navStillOn) {
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.5</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
@@ -1482,10 +1647,6 @@ if(navStillOn) {
 		<interpolation>
 			<entry>
 				<ind>0.0</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>0.5</ind>
 				<dep>0</dep>
 			</entry>
 			<entry>
