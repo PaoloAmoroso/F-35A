@@ -19,12 +19,15 @@ var strobe = aircraft.light.new( "/sim/model/lights/strobe", [0.05, 3,], "/contr
 beacon_switch = props.globals.getNode("controls/lighting/nav-lights", 1);
 var strobe = aircraft.light.new( "/sim/model/lights/nav-lights", [0.5, 1,], "/controls/lighting/nav-lights" );
 
-#DOORS, BAY DOORS, REFUELLING DOORS AND EMERGENCY ARREST HOOK
+#DOORS, BAY DOORS, LADDER, REFUELLING DOORS AND EMERGENCY ARREST HOOK
 #CANOPY: f35.canopy.toggle();
 canopy  = aircraft.door.new("/sim/model/door-positions/canopy", 4, 0 );
 
 #BAYDOORS: f35.baydoor.toggle();
 baydoor = aircraft.door.new("/sim/model/door-positions/baydoor", 3, 0 );
+
+#LADDER: f35.ladder.toggle();
+ladder  = aircraft.door.new("/sim/model/door-positions/ladder", 2, 0 );
 
 #REFUELLING DOORS: f35.fuel.toggle();
 fuel  = aircraft.door.new("/sim/model/door-positions/fuel", 2, 0 );
