@@ -17,7 +17,7 @@
        </greater-than>
        <greater-than>
          <property>/position/altitude-ft</property>
-         <value>10000</value>
+         <value>25000</value>
        </greater-than>
      </and>
    </condition>
