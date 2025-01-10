@@ -86,7 +86,8 @@
         <bool n="52" type="bool" alias="/instrumentation/gci/cutoff"/>
         <int n="0" alias="/controls/switches/nav-lights-switch"/>  <!-- Nav lights on -->
         <int n="1" alias="/controls/switches/beacon-switch"/> <!-- Beacon on -->
-        <int n="2" alias="/controls/switches/landing-lights-switch" />  <!-- Landing lights on -->
+        <int n="2" alias="/controls/switches/landing-lights-switch" />  
+<!-- Landing lights on -->
         <int n="3" alias="/controls/switches/strobe-switch"/>  <!-- Taxi light on -->
         <int n="4" alias="/controls/smoke"/> 
         <int type="int" n="5">  0 </int><!-- 5 immat -->
@@ -97,9 +98,9 @@
         <int n="10" alias="/controls/electric/key-pos">  0 </int> <!-- 10 key position -->
     <!--<int n="11" type="int" alias="/surface-positions/left-flap-pos-norm"/>-->
     <!--<int n="12" type="int" alias="/surface-positions/right-flap-pos-norm"/>-->
-        <int n="15" type="int" alias="/sim/model/daVinci_SU-34/smokewinderB1"/>
-        <int n="16" type="int" alias="/sim/model/daVinci_SU-34/smokewinderB9"/>
-        <int n="17" type="int" alias="/sim/model/daVinci_SU-34/smokewinderW1"/>
+        <int n="15" type="int" alias="/sim/model/F-35A/smokewinderB1"/>
+        <int n="16" type="int" alias="/sim/model/F-35A/smokewinderB9"/>
+        <int n="17" type="int" alias="/sim/model/F-35A/smokewinderW1"/>
         
         <float n="1" alias="/velocities/airspeed-kt/"/>
         <float n="2" alias="/velocities/mach"/>
@@ -127,7 +128,7 @@
         <float n="24" alias="/orientation/parachute-phi"/>
         <float n="25" alias="/controls/flight/parachute"/>
         <float n="26" alias="/position/altitude-ft"/>
-        <float n="27" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="27" alias="/sim/model/door-positions/canopy/position-norm"/>
         <float n="28" alias="/engines/engine/afterburner"/>
        </generic>
     </multiplay>
@@ -206,11 +207,6 @@
           <type>float</type>
           <property type="string">/sim/multiplay/generic/float[13]</property>
         </signal>
-
-        <!-- signal>
-          <type>float</type>
-          <property>canopy/position-norm</property>
-        </signal -->
 
         <signal>
           <type>float</type>
@@ -1179,7 +1175,7 @@
 			
 			<key n="99">
 				<name>c</name>
-				<desc>Open/close Canopy</desc>
+				<desc>Open/Close Canopy</desc>
 				<binding>
 					<command>nasal</command>
 					<script>f35.canopy.toggle();</script>
@@ -1768,15 +1764,7 @@
 		<aar> 
 			<file>Aircraft/Generic/aar.nas</file>
 		</aar>
-		
-		<rwr>
-			<file>Aircraft/F-35A/Models/Instruments/bigscreen/radar/rwr.nas</file>
-		</rwr>
-		
-		<radardist>
-			<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
-		</radardist>
-		
+						
 		<enav>
 			<file>Aircraft/F-35A/Nasal/enav.nas</file>
 		</enav>
@@ -1798,15 +1786,8 @@
                 </chute>
                                                 
                 <NAV>
-                        <file>Aircraft/F-35A/Nasal/mfd-navigation.nas</file>
-			<file>Aircraft/F-35A/Nasal/nd-fullscreen.nas</file>
                         <file>Aircraft/F-35A/Nasal/navaids.nas</file>
-                        <file>Aircraft/F-35A/Nasal/GUI.nas</file>
-                        <file>Aircraft/F-35A/Nasal/MFD.nas</file>
-                        <file>Aircraft/F-35A/Nasal/MFDPage.nas</file>
-                        <file>Aircraft/F-35A/Nasal/MFDPageController.nas</file>
                         <file>Aircraft/F-35A/Nasal/NavMap.nas</file>
-                        <file>Aircraft/F-35A/Nasal/PFD.nas</file>
                         <file>Aircraft/F-35A/Nasal/terrain_follow.nas</file>
                 </NAV>
               
