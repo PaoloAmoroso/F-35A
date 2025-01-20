@@ -11,6 +11,23 @@
 <rendering>
  <refl_correction type="string">-0.51</refl_correction>
  <frensel-factor type="string">0.5</frensel-factor>
+
+    <redout>
+        <enabled type="bool" userarchive="y">true</enabled>
+        <parameters>
+            <blackout-onset-g type="double">10</blackout-onset-g>
+            <blackout-complete-g type="double">11</blackout-complete-g>
+            <onset-blackout-sec type="double">300</onset-blackout-sec>
+            <fast-blackout-sec type="double">30</fast-blackout-sec>
+            <redout-onset-g type="double">-4</redout-onset-g>
+            <redout-complete-g type="double">-5</redout-complete-g>
+            <onset-redout-sec type="double">45</onset-redout-sec>
+            <fast-redout-sec type="double">7.5</fast-redout-sec>
+            <recover-fast-sec type="double">7</recover-fast-sec>
+            <recover-slow-sec type="double">15</recover-slow-sec>
+        </parameters>
+    </redout>
+
 </rendering>
 
    <previews>
