@@ -84,6 +84,7 @@
         <bool n="50" type="bool">true</bool>
         <bool n="51" type="bool" alias="/instrumentation/gci/bogeydope"/>
         <bool n="52" type="bool" alias="/instrumentation/gci/cutoff"/>
+
         <int n="0" alias="/controls/switches/nav-lights-switch"/>  <!-- Nav lights on -->
         <int n="1" alias="/controls/switches/beacon-switch"/> <!-- Beacon on -->
         <int n="2" alias="/controls/switches/landing-lights-switch" />  
@@ -98,9 +99,36 @@
         <int n="10" alias="/controls/electric/key-pos">  0 </int> <!-- 10 key position -->
     <!--<int n="11" type="int" alias="/surface-positions/left-flap-pos-norm"/>-->
     <!--<int n="12" type="int" alias="/surface-positions/right-flap-pos-norm"/>-->
-        <int n="15" type="int" alias="/sim/model/F-35A/smokewinderB1"/>
-        <int n="16" type="int" alias="/sim/model/F-35A/smokewinderB9"/>
-        <int n="17" type="int" alias="/sim/model/F-35A/smokewinderW1"/>
+        <int n="15" type="int" alias="/sim/model/F-35A/smokewinderR"/>
+        <int n="16" type="int" alias="/sim/model/F-35A/smokewinderL"/>
+
+        <int n="18" type="int" alias="/controls/armament/trigger"/>
+        <int n="19" type="int" alias="/controls/signal1"/>
+        <int n="20" type="int" alias="/controls/signal2"/>
+        <int n="21" type="int" alias="/controls/signal3"/>
+        <int n="22" type="int" alias="/controls/signal4"/>
+        <int n="23" type="int" alias="/controls/signal5"/>
+        <int n="24" type="int" alias="/controls/signal6"/>
+        <int n="25" type="int" alias="/controls/signal7"/>
+        <int n="26" type="int" alias="/controls/signal8"/>
+        <int n="27" type="int" alias="/controls/signal9"/>
+        <int n="28" type="int" alias="/controls/signal10"/>
+        <int n="29" type="int" alias="/controls/signal11"/>
+        <int n="30" type="int" alias="/controls/signal12"/>
+        <int n="31" type="int" alias="/controls/signal12"/>
+        <int n="32" type="int" alias="/controls/signal14"/>
+        <int n="33" type="int" alias="/controls/signal15"/>
+        <int n="34" type="int" alias="/controls/signal16"/>
+        <int n="35" type="int" alias="/controls/signal17"/>
+        <int n="36" type="int" alias="/controls/signal18"/>
+        <int n="37" type="int" alias="/controls/signal19"/>
+        <int n="38" type="int" alias="/controls/signal20"/>
+        <int n="39" type="int" alias="/controls/signal21"/>
+        <int n="40" type="int" alias="/controls/signal22"/>
+        <int n="41" type="int" alias="/controls/signal23"/>
+        <int n="42" type="int" alias="/controls/signal24"/>
+        <int n="43" type="int" alias="/controls/signalN1"/>
+        <int n="44" type="int" alias="/controls/signalN2"/>
         
         <float n="1" alias="/velocities/airspeed-kt/"/>
         <float n="2" alias="/velocities/mach"/>
@@ -130,7 +158,9 @@
         <float n="26" alias="/position/altitude-ft"/>
         <float n="27" alias="/sim/model/door-positions/canopy/position-norm"/>
         <float n="28" alias="/engines/engine/afterburner"/>
+
        </generic>
+
     </multiplay>
 
 <flight-recorder>
@@ -307,7 +337,7 @@
 			</key>
                         <key>
 				<name>O/o</name>
-				<desc>Deploy/Retract Tail Hook (Not for Deck Landings!)</desc>
+				<desc>Deploy/Retract Tail Hook</desc>
 			</key>
 
                 <key>
@@ -351,7 +381,7 @@
 			</key>
 			
 			<line></line>
-<line>To start up and shutdown the aircraft, use the button on the left side of the cockpit, the "AutoStart" command in the menu, or the corresponding key on the keyboard.</line>
+<line>To start up and shutdown the Aircraft, use the button on the left side of the cockpit, the "AutoStart" command in the menu, or the corresponding key on the keyboard.</line>
                         <line></line>
 			<line>Apply full power, hold the stick back. Take off will occur at 140-160kts on a clean aircraft.</line>
                         <line></line>
@@ -378,6 +408,12 @@
 <line>STATION 9  External: Auxiliary Tanks, GBU-12, AIM-120, AGM-154, AGM-158</line>
 <line>STATION 10 External: GBU-12, AIM-120, AGM-154, AGM-158</line>
 <line>STATION 11 External: AIM-9M, Smokewinder</line>
+                        <line></line>
+<line>CARRIER OPERATIONS</line>
+                        <line></line>
+<line>The F-35A is not a naval aircraft, but after some requests, I decided to implement the Launch-Bar command.</line>
+                        <line></line>
+<line>Press "C" for Catapult Launch command, press "L" for Launch-bar Engage command.</line>
                         <line></line>
 
 		</help>
@@ -1209,28 +1245,6 @@
       </binding>
     </key>
 
-  <!-- map keys for arrester hook YASIM -->
-
- <key n="79">
-   <name>O</name>
-   <desc>Hook down.</desc>
-   <binding>
-     <command>property-assign</command>
-     <property>controls/gear/tailhook</property>
-     <value type="double">1.0</value>
-   </binding>
- </key>
-
- <key n="111">
-   <name>o</name>
-   <desc>Hook Up.</desc>
-   <binding>
-     <command>property-assign</command>
-     <property>controls/gear/tailhook</property>
-     <value type="double">0.0</value>
-   </binding>
- </key>
-
  <key n="125">
      <name>}</name>
      <desc>Engine Autostart</desc>
@@ -1279,7 +1293,7 @@
       </binding>
     </key>
 
-<!-- Map Keys for Weapons -->
+<!-- WEAPONS -->
 
 			<key n="101">
 				<name>e</name>
@@ -1744,6 +1758,58 @@
       </mod-up>
     </key>
 
+  <!-- CARRIER OPERATIONS -->
+
+    <!-- Catapult Launch -->
+    <key n="67">
+      <name>shift+c (C)</name>
+      <desc>Catapult Launch Command.</desc>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/gear/catapult-launch-cmd</property>
+        <value type="bool">true</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/gear/catapult-launch-cmd</property>
+          <value type="bool">false</value>
+        </binding>
+      </mod-up>
+    </key>
+
+    <!-- map keys for Launch-bar -->
+    <key n="76">
+      <name>shift+l (L)</name>
+      <desc>Launch-bar engage.</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/gear/launchbar</property>
+      </binding>
+    </key>
+
+<!-- map keys for Arrester Hook -->
+ <key n="79">
+   <name>O</name>
+   <desc>Hook down.</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>controls/gear/tailhook</property>
+     <value type="double">1.0</value>
+   </binding>
+ </key>
+
+ <key n="111">
+   <name>o</name>
+   <desc>Hook Up.</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>controls/gear/tailhook</property>
+     <value type="double">0.0</value>
+   </binding>
+ </key>
+
+
 		</keyboard>
 	</input>
 
@@ -1759,6 +1825,7 @@
                 <file>Aircraft/F-35A/Nasal/light.nas</file>  
                 <file>Aircraft/F-35A/Nasal/Lights.nas</file>  
                 <file>Aircraft/F-35A/Nasal/Electrical.nas</file>
+                <file>Aircraft/F-35A/Nasal/launchbar.nas</file>
 		</f35>
 
 		<aar> 
