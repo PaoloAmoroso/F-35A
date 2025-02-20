@@ -176,6 +176,8 @@
         <float n="27" alias="/sim/model/door-positions/canopy/position-norm"/>
         <float n="28" alias="/engines/engine/afterburner"/>
 
+        <string n="9" type="string"/>
+
        </generic>
 
     </multiplay>
@@ -1011,13 +1013,18 @@
         <number>0</number>
     </marker-beacon>
 
-  <mk-viii>                           <!-- http://wiki.flightgear.org/index.php/GPWS -->
+  <mk-viii>                           
+<!-- http://wiki.flightgear.org/index.php/GPWS -->
     <serviceable>true</serviceable>
     <configuration-module>
-      <category-1> 255 </category-1>  <!-- AIRCRAFT_MODE_TYPE_SELECT -->
-      <category-4>  13 </category-4>  <!-- ALTITUDE CALLOUTS -->
-      <category-8>   3 </category-8>  <!-- RADIO ALTITUDE YASIM-->
-      <category-14>  2 </category-14> <!-- AUDIO OUTPUT LEVEL -->
+      <category-1> 255 </category-1>  
+<!-- AIRCRAFT_MODE_TYPE_SELECT -->
+      <category-4>  13 </category-4>  
+<!-- ALTITUDE CALLOUTS -->
+      <category-8>   3 </category-8>  
+<!-- RADIO ALTITUDE YASIM-->
+      <category-14>  2 </category-14> 
+<!-- AUDIO OUTPUT LEVEL -->
     </configuration-module>
     <inputs>
       <arinc429>
@@ -1026,8 +1033,10 @@
       </arinc429>
     </inputs>
     <speaker>
-      <max-dist> 2 </max-dist>        <!-- Max. distance where speaker is heard -->
-      <reference-dist> 1 </reference-dist> <!-- Distance to pilot -->
+      <max-dist> 2 </max-dist>        
+<!-- Max. distance where speaker is heard -->
+      <reference-dist> 1 </reference-dist> 
+<!-- Distance to pilot -->
       <volume>0.8</volume>
     </speaker>
     <voice>
@@ -1059,7 +1068,7 @@
       <arpt type="bool">1</arpt>
       <vor type="bool">1</vor>
       <fix type="bool">0</fix>
-      <tcas type="bool">0</tcas>
+      <tcas type="bool">1</tcas>
     </display>
     <line-width type="double">3</line-width>
   </nd>
@@ -1094,8 +1103,8 @@
       <hsi type="bool">0</hsi>
       <wx type="bool">0</wx>
       <et type="bool">0</et>
-      <tcas type="bool">0</tcas>
-      <acft-sys type="bool">0</acft-sys>
+      <tcas type="bool">1</tcas>
+      <acft-sys type="bool">1</acft-sys>
       <mfd-map type="bool">1</mfd-map>
       <mfd-wx type="bool">1</mfd-wx>
       <norm type="bool">0</norm>
@@ -1122,7 +1131,7 @@
 
     <radar>
       <serviceable type="bool" archive="y">true</serviceable>
-      <switch type="string" archive="y">off</switch>
+      <switch type="string" archive="y">on</switch>
       <mode-control type="int" archive="y">3</mode-control>
       <range type="int" archive="y">20</range>
       <minimized type="bool" archive="y">false</minimized>
@@ -1131,7 +1140,7 @@
       <display-mode type="string">ARC</display-mode>
         <display-controls>
           <WX type="bool" archive="y">false</WX>
-          <data type="bool" archive="y">false</data>
+          <data type="bool" archive="y">true</data>
           <pos type="bool" archive="y">true</pos>
         </display-controls>
     </radar>
