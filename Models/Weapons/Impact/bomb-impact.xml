@@ -4,7 +4,7 @@
 
   <submodel>
     <name>Bomb impact fire</name>
-    <model>Aircraft/Aermacchi-MB-339/Models/Effects/Weapons/Impact/explosion.xml</model>
+    <model>Aircraft/F-35A/Models/Weapons/Impact/explosion.xml</model>
     <speed>0</speed>
     <repeat>false</repeat>
     <delay>0</delay>
