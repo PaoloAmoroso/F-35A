@@ -212,4 +212,37 @@
     </action>
   </animation>
 
+<!-- Radar Button for Air Traffic Informations -->
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>knobL</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/radar/info</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>knobL</object-name>
+    <property>instrumentation/radar/info</property>
+    <factor> 35 </factor>
+    <center>
+      <x-m> 0.010 </x-m>
+      <y-m> 0.249 </y-m>
+      <z-m> 0.070 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
 </PropertyList>
