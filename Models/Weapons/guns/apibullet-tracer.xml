@@ -11,11 +11,6 @@
   <model>
     <name>smoke</name>
     <path>apibullet-smoke.xml</path>
-    <offsets>
-      <x-m> -2.49540 </x-m>
-      <y-m> -1.47150 </y-m>
-      <z-m>  0.42969 </z-m>
-    </offsets>
   </model>
 
   <animation>
