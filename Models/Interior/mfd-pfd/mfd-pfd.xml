@@ -7,6 +7,8 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>fond</object-name>
+    <object-name>fond_OFF</object-name>
+    <object-name>fond_Back</object-name>
     <object-name>fondL</object-name>
     <object-name>canvasCadre</object-name>
     <object-name>fondR</object-name>
@@ -147,6 +149,17 @@
       <y> -1 </y>
       <z>  0 </z>
     </axis>
+  </animation>
+
+  <!-- TURN-OFF SCREEN -->
+  <animation>
+    <type>select</type>
+    <object-name>fond_OFF</object-name>
+    <condition>
+      <not>
+        <property>controls/lighting/cockpit</property>
+      </not>
+    </condition>
   </animation>
 
 <!-- Map/Radar Mode -->

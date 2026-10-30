@@ -317,9 +317,9 @@
     <type>translate</type>
     <object-name>oiltemp3</object-name>
     <condition>
-      <not><property>/controls/engines/engine[2]/cutoff</property></not>
+      <not><property>/controls/engines/engine[0]/cutoff</property></not>
     </condition>
-    <property>engines/engine[2]/oilt-norm</property>
+    <property>engines/engine[0]/oilt-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.000 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.020 </dep></entry>
@@ -335,9 +335,9 @@
     <type>translate</type>
     <object-name>oiltemp2</object-name>
     <condition>
-      <not><property>/controls/engines/engine[1]/cutoff</property></not>
+      <not><property>/controls/engines/engine[0]/cutoff</property></not>
     </condition>
-    <property>engines/engine[1]/oilt-norm</property>
+    <property>engines/engine[0]/oilt-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.000 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.020 </dep></entry>
@@ -371,9 +371,9 @@
     <type>translate</type>
     <object-name>oilpsi3</object-name>
     <condition>
-      <not><property>/controls/engines/engine[2]/cutoff</property></not>
+      <not><property>/controls/engines/engine[0]/cutoff</property></not>
     </condition>
-    <property>engines/engine[2]/oilp-norm</property>
+    <property>engines/engine[0]/oilp-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.0190 </dep></entry>
@@ -389,9 +389,9 @@
     <type>translate</type>
     <object-name>oilpsi2</object-name>
     <condition>
-      <not><property>/controls/engines/engine[1]/cutoff</property></not>
+      <not><property>/controls/engines/engine[0]/cutoff</property></not>
     </condition>
-    <property>engines/engine[1]/oilp-norm</property>
+    <property>engines/engine[0]/oilp-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> 0.0000 </dep></entry>
       <entry><ind> 1 </ind><dep> 0.0190 </dep></entry>
