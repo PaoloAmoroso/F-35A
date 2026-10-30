@@ -3122,6 +3122,13 @@ if(navStillOn) {
           <script>gui.popupTip("Engines started!")</script>
         </binding>
     </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Engine Switch</tooltip-id>
+        <label>Engine Switch ON</label>
+      </binding>
+    </hovered>
   </animation>
 
   <!-- Autostop -->
@@ -3171,6 +3178,13 @@ if(navStillOn) {
           <script>gui.popupTip("Engines Shutdown!")</script>
         </binding>
     </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Engine Switch</tooltip-id>
+        <label>Engine Switch OFF</label>
+      </binding>
+    </hovered>
   </animation>
 
   <!-- Light Panel -->
@@ -3201,6 +3215,13 @@ if(navStillOn) {
         <property>controls/lighting/strobe</property>
       </binding>
     </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Strobe Lights</tooltip-id>
+        <label>Strobe Lights</label>
+      </binding>
+    </hovered>
   </animation>
 
   <animation>
@@ -3230,6 +3251,13 @@ if(navStillOn) {
         <property>controls/lighting/nav-lights</property>
       </binding>
     </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>Nav Lights</tooltip-id>
+        <label>Nav Lights</label>
+      </binding>
+    </hovered>
   </animation>
 
 	<!-- EFFECTS -->
