@@ -6,7 +6,9 @@
 
   <animation>
     <object-name>fond</object-name>
+    <object-name>Symbol</object-name>
     <object-name>background</object-name>
+    <object-name>background_OFF</object-name>
     
     <object-name>vitre</object-name>
   </animation>
@@ -25,6 +27,7 @@
   <animation>
     <type>material</type>
     <object-name>fond</object-name>
+    <object-name>Symbol</object-name>
     <!-- condition>
       <property>controls/electric/battery-switch</property>
     </condition -->
@@ -39,6 +42,7 @@
   <animation>
     <type>material</type>
     <object-name>background</object-name>
+    <object-name>Symbol</object-name>
     <!-- condition>
       <property>controls/electric/battery-switch</property>
     </condition -->
@@ -82,6 +86,17 @@
         <z> -1 </z>
       </axis>
     </transform>
+  </animation>
+
+  <!-- TURN-OFF SCREEN -->
+  <animation>
+    <type>select</type>
+    <object-name>background_OFF</object-name>
+    <condition>
+      <not>
+        <property>controls/lighting/cockpit</property>
+      </not>
+    </condition>
   </animation>
   
 </PropertyList>
