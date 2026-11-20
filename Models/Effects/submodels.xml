@@ -28,7 +28,7 @@
     <cd>0.193</cd>
     <weight>0.286600941</weight>
     <eda>0.00338158219</eda>
-    <pitch-offset>4</pitch-offset>
+    <pitch-offset>3.8</pitch-offset>
     <fuse-range>0</fuse-range>
     <life>60</life>
     <trigger>controls/armament/trigger</trigger>
@@ -61,11 +61,11 @@
     <collision alias="../../cannon/collision"/>
     <impact alias="../../cannon/impact"/>
     <submodel-path alias="../../cannon/submodel-path"/>
-    <offsets>
+    <!-- <offsets> -->
       <x-m> -2.49540 </x-m>
       <y-m> -1.47150 </y-m>
       <z-m>  0.42969 </z-m>
-    </offsets>
+    <!-- </offsets> -->
   </submodel>
 
   <submodel>
