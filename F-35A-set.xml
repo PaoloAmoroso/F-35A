@@ -90,60 +90,73 @@
         <bool n="0" type="bool" alias="damage/sounds/explode-on"/>
         <bool n="1" type="bool" alias="damage/fire/serviceable"/>
         <bool n="2" type="bool">true</bool><!-- this must stay true to prevent bug in MP protocol for bools -->
+
+        <bool n="35" type="bool" alias="/surface-positions/chute-pos-norm"/>
+        <bool n="36" type="bool" alias="/controls/engines/engine/throttle"/>
         <bool n="40" type="bool">true</bool>
         <bool n="41" type="bool">true</bool>
         <bool n="42" type="bool">true</bool>
         <bool n="43" type="bool">true</bool>
         <bool n="44" type="bool">true</bool>
         <bool n="45" type="bool">true</bool>
-        <bool n="35" type="bool" alias="/surface-positions/chute-pos-norm"/>
-        <bool n="36" type="bool" alias="/controls/engines/engine/throttle"/>
         <bool n="50" type="bool">true</bool>
         <bool n="51" type="bool" alias="/instrumentation/gci/bogeydope"/>
         <bool n="52" type="bool" alias="/instrumentation/gci/cutoff"/>
 
-        <int n="0" alias="/controls/switches/nav-lights-switch"/>  <!-- Nav lights on -->
-        <int n="1" alias="/controls/switches/beacon-switch"/> <!-- Beacon on -->
+        <int n="0" alias="/controls/switches/nav-lights-switch"/>
+        <int n="1" alias="/controls/switches/beacon-switch"/> 
         <int n="2" alias="/controls/switches/landing-lights-switch" />  
-<!-- Landing lights on -->
-        <int n="3" alias="/controls/switches/strobe-switch"/>  <!-- Taxi light on -->
-        <int n="4" alias="/controls/smoke"/> 
-        <int type="int" n="5">  0 </int><!-- 5 immat -->
-        <int type="bool" n="6"> 1 </int><!-- 6 smoke/bomb/torpedo -->
-        <int n="7" alias="/sim/crashed" /><!-- Crashed -->
-        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int> <!-- 8 nav-lights -->
-        <int n="9" alias="/sim/model/lights/beacon/state">  false </int> <!-- 9 strobe-lights -->
-        <int n="10" alias="/controls/electric/key-pos">  0 </int> <!-- 10 key position -->
+        <int n="3" alias="/controls/switches/strobe-switch"/>          <int n="4" alias="/controls/smoke"/> 
+        <!-- 5 immat -->
+        <int type="int" n="5">  0 </int> 
+        <!-- 6 smoke/bomb/torpedo -->
+        <int type="bool" n="6"> 1 </int>
+        <!-- Crashed -->
+        <int n="7" alias="/sim/crashed" /> <!-- Crashed -->
+        <!-- 8 nav-lights -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int> 
+        <!-- 9 strobe-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int> 
+        <!-- 10 key position -->
+        <int n="10" alias="/controls/electric/key-pos"> 0 </int>
     <!--<int n="11" type="int" alias="/surface-positions/left-flap-pos-norm"/>-->
     <!--<int n="12" type="int" alias="/surface-positions/right-flap-pos-norm"/>-->
-        <int n="15" type="int" alias="/sim/model/F-35A/smokewinderR"/>
-        <int n="16" type="int" alias="/sim/model/F-35A/smokewinderL"/>
 
+        <!-- ALL WEAPONS -->
+        <!-- GAU-22/A Cannon -->
         <int n="18" type="int" alias="/controls/armament/trigger"/>
+        <!-- AIM-9 Wingtip -->
         <int n="19" type="int" alias="/controls/signal1"/>
         <int n="20" type="int" alias="/controls/signal2"/>
+        <!-- AIM-120 Internal -->
         <int n="21" type="int" alias="/controls/signal3"/>
         <int n="22" type="int" alias="/controls/signal4"/>
+        <!-- GBU-12 -->
         <int n="23" type="int" alias="/controls/signal5"/>
         <int n="24" type="int" alias="/controls/signal6"/>
         <int n="25" type="int" alias="/controls/signal7"/>
         <int n="26" type="int" alias="/controls/signal8"/>
         <int n="27" type="int" alias="/controls/signal9"/>
         <int n="28" type="int" alias="/controls/signal10"/>
+        <!-- AIM-120 External -->
         <int n="29" type="int" alias="/controls/signal11"/>
         <int n="30" type="int" alias="/controls/signal12"/>
-        <int n="31" type="int" alias="/controls/signal12"/>
+        <int n="31" type="int" alias="/controls/signal13"/>
         <int n="32" type="int" alias="/controls/signal14"/>
+        <!-- AGM-154 External -->
         <int n="33" type="int" alias="/controls/signal15"/>
         <int n="34" type="int" alias="/controls/signal16"/>
         <int n="35" type="int" alias="/controls/signal17"/>
         <int n="36" type="int" alias="/controls/signal18"/>
+        <!-- AGM-158 External -->
         <int n="37" type="int" alias="/controls/signal19"/>
         <int n="38" type="int" alias="/controls/signal20"/>
         <int n="39" type="int" alias="/controls/signal21"/>
         <int n="40" type="int" alias="/controls/signal22"/>
+        <!-- AIM-120 Internal x2 -->
         <int n="41" type="int" alias="/controls/signal23"/>
         <int n="42" type="int" alias="/controls/signal24"/>
+        <!-- B-61 Mock-Up -->
         <int n="43" type="int" alias="/controls/signalN1"/>
         <int n="44" type="int" alias="/controls/signalN2"/>
         
